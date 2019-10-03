@@ -6,7 +6,7 @@ const PostsDB = require('../posts/postDb.js');
 // Ensure our router is using Express
 const router = express.Router();
 
-router.post('/', (req, res) => {
+router.post('/', validateUser, (req, res) => {
     const body = req.body;
     console.log('This is the body', body)
     UsersDB.insert(body)
@@ -96,6 +96,7 @@ router.put('/:id', validateUser, validateUserId, (req, res) => {
 
 
 //custom middleware
+
 function validateUserId(req, res, next) {
     // store req.params.id
     const id = req.params.id;

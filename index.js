@@ -1,7 +1,8 @@
 // code away!
-// GOTCHA require* was needed
+
+require('dotenv').config()
+
 // Imports
-const express = require('express');
 const server = require('./server.js');
 
 
