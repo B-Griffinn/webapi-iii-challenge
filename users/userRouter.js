@@ -72,7 +72,7 @@ router.get('/:id/posts', validateUserId, (req, res) => {
 router.delete('/:id', validateUserId, (req, res) => {
     UsersDB.remove(req.params.id)
     .then(() => {
-        res.status(200).json({ deleteduser: req.user})
+        res.status(200).json({ deleteduser: req.user })
     })
     .catch(err => {
         res.status(500).json({ errorMessage: "An error occured while trying to delete the user." })
